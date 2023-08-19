@@ -24,4 +24,5 @@ int _printfstring(va_list args);
 int _printfpercentage(void);
 int _strlen(char *s);
 int _printf(const char *format, ...);
+int _strcmp(const char *s1, char *s2);
 #endif
