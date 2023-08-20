@@ -1,64 +1,49 @@
 #include "main.h"
+
 /**
- * _printfint - print integer
- * @args: parametres passed to function
- * Return: len
+* _printfint - prints integer
+* @args: argument to print
+* Return: number of characters printed
 */
+
 int _printfint(va_list args)
 {
-int len = 0, n, a, i, *T, negative = 0;
+int num = va_arg(args, int);
+int cpnum, lastnum = num % 10;
+int digit;
+int exp = 1;
+int  len = 1;
 
-n = va_arg(args, int);
-a = n;
-if (n < 0)
+num = num / 10;
+cpnum = num;
+
+if (lastnum < 0)
 {
-negative = 1;
-n = -n;
+_putchar('-');
+cpnum = -cpnum;
+num = -num;
+lastnum = -lastnum;
 len++;
 }
-else if (n == 0)
+if (cpnum > 0)
 {
-_putchar('0');
-return (1);
+while (cpnum / 10 != 0)
+{
+exp = exp * 10;
+cpnum = cpnum / 10;
 }
-while (a != 0)
+cpnum = num;
+while (exp > 0)
 {
+digit = cpnum / exp;
+_putchar(digit + '0');
+cpnum = cpnum - (digit *exp);
+exp = exp / 10;
 len++;
-a = a / 10;
 }
-T = (int *)malloc(sizeof(int) * len);
-if (T == NULL)
-return (-1);
-i = 0;
-while (n != 0)
-{
-T[i] = n % 10;
-n = n / 10;
-i++;
 }
-if (negative == 1)
-{
-T[i] = 45;
-}
-printt(len, T);
-free(T);
+
+_putchar(lastnum + '0');
+
 return (len);
-}
-/**
- * printt - print integer
- * @len: len of argument
- * @T: table
- * Return: Nothing
-*/
-void printt(int len, int *T)
-{
-	int i;
-
-for (i = len - 1; i >= 0; i--)
-{
-if (i == len - 1)
-_putchar(T[i]);
-else
-_putchar(T[i] + '0');
-}
 }

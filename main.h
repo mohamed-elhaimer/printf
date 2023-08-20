@@ -26,5 +26,4 @@ int _strlen(char *s);
 int _printf(const char *format, ...);
 int _strcmp(const char *s1, char *s2);
 int _printfint(va_list args);
-void printt(int len, int *T);
 #endif
