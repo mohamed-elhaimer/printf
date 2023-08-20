@@ -9,8 +9,9 @@ int _printf(const char *format, ...)
 int j = 0, i, len = 0;
 
 convert tab[] = {{"%%", _printfpercentage},
-{"%c", _printfchar}, {"%s", _printfstring}
-};
+{"%c", _printfchar}, {"%s", _printfstring},
+{"%d", _printfint}, {"%i", _printfint}};
+
 va_start(args, format);
 if (format == NULL || _strcmp(format, "") == 0 ||
 (format[0] == '%' && format[1] == '\0'))
@@ -19,7 +20,7 @@ return (-1);
 block:
 while (format[j] != '\0')
 {
-for (i = 0; i < 3; i++)
+for (i = 0; i < 5; i++)
 {
 if (tab[i].ptr_spc[0] == format[j] && tab[i].ptr_spc[1] == format[j + 1])
 {

@@ -25,4 +25,5 @@ int _printfpercentage(void);
 int _strlen(char *s);
 int _printf(const char *format, ...);
 int _strcmp(const char *s1, char *s2);
+int _printfint(va_list args);
 #endif
