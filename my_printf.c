@@ -10,7 +10,8 @@ int j = 0, i, len = 0;
 
 convert tab[] = {{"%%", _printfpercentage},
 {"%c", _printfchar}, {"%s", _printfstring},
-{"%d", _printfint}, {"%i", _printfint}};
+{"%d", _printfint}, {"%i", _printfint},
+{"%b", _printfbin}};
 
 va_start(args, format);
 if (format == NULL || _strcmp(format, "") == 0 ||
@@ -20,7 +21,7 @@ return (-1);
 block:
 while (format[j] != '\0')
 {
-for (i = 0; i < 5; i++)
+for (i = 0; i < 6; i++)
 {
 if (tab[i].ptr_spc[0] == format[j] && tab[i].ptr_spc[1] == format[j + 1])
 {
