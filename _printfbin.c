@@ -13,7 +13,7 @@ int _printfbin(va_list args)
 
 	if (n == 0)
 	{
-		putchar(0);
+		_putchar(48);
 		return (1);
 	}
 	while (n != 0)
