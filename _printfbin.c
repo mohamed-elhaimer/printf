@@ -6,7 +6,7 @@
 */
 int _printfbin(va_list args)
 {
-	unsigned long int n = va_arg(args, unsigned long int);
+	unsigned int n = va_arg(args, unsigned long int);
 	int i = 0;
 	int binary[32];
 	int j;
