@@ -12,6 +12,11 @@ int _printfoctal(va_list args)
 	unsigned int num = va_arg(args, unsigned int);
 	unsigned int cpnum = num;
 
+	if (num == 0)
+	{
+		_putchar(48);
+		return (1);
+	}
 	while (num != 0)
 	{
 		num /= 8;
@@ -25,7 +30,7 @@ int _printfoctal(va_list args)
 	}
 	for (i = len - 1; i >= 0; i--)
 	{
-		_putchar(array[i] + '0');
+		_putchar(array[i] + 48);
 	}
 	free(array);
 	return (len);

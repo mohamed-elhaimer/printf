@@ -12,6 +12,11 @@ int _printfhexadecimaluper(va_list args)
 	unsigned int num = va_arg(args, int);
 	unsigned int cpnum = num;
 
+	if (num == 0)
+	{
+		_putchar(48);
+		return (1);
+	}
 	while (num != 0)
 	{
 		num /= 16;
@@ -27,7 +32,7 @@ int _printfhexadecimaluper(va_list args)
 	{
 		if (array[i] > 9)
 		array[i] = array[i] + 7;
-		_putchar(array[i] + '0');
+		_putchar(array[i] + 48);
 	}
 	free(array);
 	return (len);
