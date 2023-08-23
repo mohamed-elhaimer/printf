@@ -27,4 +27,8 @@ int _printf(const char *format, ...);
 int _strcmp(const char *s1, char *s2);
 int _printfint(va_list args);
 int _printfbin(va_list args);
+int  _printfunsigned(va_list args);
+int _printfoctal(va_list args);
+int _printfhexadecimal(va_list args);
+int _printfhexadecimaluper(va_list args);
 #endif
