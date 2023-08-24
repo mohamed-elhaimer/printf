@@ -9,7 +9,7 @@ int printfexclusivestring(va_list args)
 {
 	char *s;
 	int i, len = 0;
-	int cast;
+	unsigned int cast;
 
 	s = va_arg(args, char *);
 	if (s == NULL)
@@ -21,7 +21,7 @@ int printfexclusivestring(va_list args)
 			_putchar('\\');
 			_putchar('x');
 			len = len + 2;
-			cast = s[i];
+			cast = (unsigned int)s[i];
 			if (cast < 16)
 			{
 				_putchar('0');
