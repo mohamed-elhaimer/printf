@@ -31,4 +31,7 @@ int  _printfunsigned(va_list args);
 int _printfoctal(va_list args);
 int _printfhexadecimal(va_list args);
 int _printfhexadecimaluper(va_list args);
+int _printfhexadecimalup(unsigned int num);
+int printf_exclusive_string(va_list val);
+
 #endif
