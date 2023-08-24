@@ -13,7 +13,7 @@ convert tab[] = {{"%%", _printfpercentage},
 {"%d", _printfint}, {"%i", _printfint},
 {"%b", _printfbin}, {"%u", _printfunsigned},
 {"%o", _printfoctal}, {"%x", _printfhexadecimal},
-{"%X", _printfhexadecimaluper}, {"%S", printf_exclusive_string}
+{"%X", _printfhexadecimaluper}, {"%S", printfexclusivestring}
 };
 
 va_start(args, format);
