@@ -33,5 +33,7 @@ int _printfhexadecimal(va_list args);
 int _printfhexadecimaluper(va_list args);
 int printfexclusivestring(va_list val);
 int printfHEXaux(unsigned int num);
+int printfhexaux(unsigned long int n);
+int printfptr(va_list args);
 
 #endif

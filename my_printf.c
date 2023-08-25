@@ -13,7 +13,8 @@ convert tab[] = {{"%%", _printfpercentage},
 {"%d", _printfint}, {"%i", _printfint},
 {"%b", _printfbin}, {"%u", _printfunsigned},
 {"%o", _printfoctal}, {"%x", _printfhexadecimal},
-{"%X", _printfhexadecimaluper}, {"%S", printfexclusivestring}
+{"%X", _printfhexadecimaluper}, {"%S", printfexclusivestring},
+{"%p", printfptr}
 };
 
 va_start(args, format);
@@ -24,7 +25,7 @@ return (-1);
 block:
 while (format[j] != '\0')
 {
-for (i = 0; i < 11; i++)
+for (i = 0; i < 12; i++)
 {
 if (tab[i].ptr_spc[0] == format[j] && tab[i].ptr_spc[1] == format[j + 1])
 {
